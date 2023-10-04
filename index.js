@@ -1,3 +1,5 @@
+import assert from "node:assert/strict";
+
 const somaHorasExtras = (salario, valorHorasExtras) =>
   salario + valorHorasExtras;
 
@@ -6,11 +8,14 @@ const calculaDescontos = (salario, descontos) => salario - descontos;
 const verifiqueSe = (valor) => {
   const assercoes = {
     ehExatamenteIgualA(esperado) {
-      if (valor !== esperado) {
-        throw {};
-      }
+      //    if (valor !== esperado) {
+      //      throw {};
+      //    }
+
+      assert.strictEqual(valor, esperado);
     },
   };
+
   return assercoes;
 };
 
